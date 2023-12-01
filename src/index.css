@@ -1,0 +1,23 @@
+.container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.loader,
+.error {
+    display: none;
+    color: red;
+}
+
+.cat-info {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+img {
+    max-width: 450px;
+    height: auto;
+}
