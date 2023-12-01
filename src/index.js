@@ -11,14 +11,7 @@ export async function fetchBreeds() {
   }
 }
 
-export async function fetchCatByBreed(breedId) {
-  try {
-    const response = await axios.get(`https://api.thecatapi.com/v1/images/search?breed_ids=${breedId}`);
-    return response.data;
-  } catch (error) {
-    throw error;
-  }
-}
+import { fetchCatByBreed } from "./cat-api";
 
 const breedSelect = document.querySelector(".breed-select");
 const loader = document.querySelector(".loader");

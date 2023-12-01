@@ -7,17 +7,21 @@
 
 .loader,
 .error {
-    display: none;
     color: red;
 }
 
-.cat-info {
-    margin-top: 20px;
+#catDetails {
     display: flex;
     justify-content: center;
+    margin: 20px 10px;
+}
+
+p {
+    margin-left: 10px;
 }
 
 img {
     max-width: 450px;
     height: auto;
+    margin-right: 10px;
 }
