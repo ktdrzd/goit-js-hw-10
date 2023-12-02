@@ -2,15 +2,8 @@
 import axios from "axios";
 axios.defaults.headers.common["x-api-key"] = "live_xbvyr8gp6w59zaFxrYA5AC9mQDB1S6KCEnS5MTkN1v3jNF3sZJGG0d0ck0k6qDgX";
 
-export async function fetchBreeds() {
-  try {
-    const response = await axios.get("https://api.thecatapi.com/v1/breeds");
-    return response.data;
-  } catch (error) {
-    throw error;
-  }
-}
 
+import { fetchBreeds } from "./cat-api";
 import { fetchCatByBreed } from "./cat-api";
 
 const breedSelect = document.querySelector(".breed-select");
@@ -18,6 +11,8 @@ const loader = document.querySelector(".loader");
 const error = document.querySelector(".error");
 const catInfo = document.querySelector(".cat-info");
 const catDetails = document.getElementById("catDetails");
+
+error.style.display = "none";
 
 async function populateBreedsSelect() {
   try {
@@ -30,7 +25,7 @@ async function populateBreedsSelect() {
       breedSelect.appendChild(option);
     });
   } catch (err) {
-    error.style.display = "block";
+    console.error("Error loading breeds:", err);
   } finally {
     loader.style.display = "none";
   }
